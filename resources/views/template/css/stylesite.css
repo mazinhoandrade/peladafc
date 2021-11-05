@@ -1,0 +1,52 @@
+/* style do site */
+
+/* cards dos atletas */
+.areaatletas {
+    margin: 5px 5px;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #e6e6e6;
+}
+.areaatletas img {
+    width: 100%;
+    border-radius: 4px 0 0 4px;
+}
+.areaatletas .titulo {
+    float: left;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+}
+
+.areaatletas .infoa {
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #000;
+    text-decoration: none;
+}
+
+/* cards campo aniversario */
+.campoAniversario {
+    margin: 5px 5px;
+    padding: 5px;
+    border-radius: 4px;
+}
+.campoAniversario img {
+    width: 100%;
+    border-radius: 50%;
+}
+.campoAniversario .titulo {
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+}
+.campoAniversario .data {
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+}
