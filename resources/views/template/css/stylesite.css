@@ -50,3 +50,12 @@
     color: #000;
     text-decoration: none;
 }
+
+/* ranking */
+.btn select {
+    float: left;
+    background-color: #e6e6e6;
+    border-radius: 4px;
+    border-style: none;
+    padding: 8px;
+}
