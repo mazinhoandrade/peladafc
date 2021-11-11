@@ -29,6 +29,7 @@ use App\Http\Controllers\AdminController;
 // });
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/atleta', [HomeController::class, 'lista'])->name('atleta');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'indexA']);

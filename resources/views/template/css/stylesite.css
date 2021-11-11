@@ -1,5 +1,12 @@
 /* style do site */
 
+/* menu do site */
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+    font-size: 18px;
+}
 /* cards dos atletas */
 .areaatletas {
     margin: 5px 5px;

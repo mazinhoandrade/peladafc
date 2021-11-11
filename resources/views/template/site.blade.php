@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <title>@yield('titulo')</title>
     <meta charset="utf-8">
@@ -9,18 +10,27 @@
     <link rel="stylesheet" href="http://localhost/babav1/resources/views/template/css/stylesite.css">
     <link rel="stylesheet" href="http://localhost/babav1/resources/views/template/css/style.css">
 </head>
+
 <body>
-        <header>
-            <div class="container-fluid">
+    <header>
+        <div class="container-fluid">
             <div class="row top justify-content-center">
                 <div class="logo">
                     <h1>amigos da bola</h1>
                 </div>
             </div>
-            </div>
-        </header>
+        </div>
+    </header>
 
-    
+    <div class="container-fluid desk">
+        <div class="row nav">
+            <ul>
+                <li><a href="/">pagina inicial</a></li>
+                <li><a href="{{ route('atleta') }}">lista atleta</a></li>
+            </ul>
+        </div>
+
+    </div>
 
     <section>
         @yield('content')
@@ -30,4 +40,5 @@
         Todos os Direitos Resevados - Amigos Da Bola - By:MazinhoAndrade
     </footer>
 </body>
+
 </html>

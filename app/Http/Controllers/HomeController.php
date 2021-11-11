@@ -8,8 +8,15 @@ use Illuminate\Support\Facades\Gate;
 
 class HomeController extends Controller
 {
-   protected $aniversariantes = [];
 
+   public function lista()
+   {
+      $data = Atleta::Paginate(5);
+      return view('atleta', [
+         'atletas' => $data,
+         
+      ]);
+   }
 
    public function index(Request $request)
    {
@@ -29,7 +36,7 @@ class HomeController extends Controller
             break;
       }
 
-      $dados = Atleta::Paginate(5);
+      $dados = Atleta::all();
       return view('home', [
          'atletas' => $dados,
          'tops' => $topGols
