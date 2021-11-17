@@ -9,19 +9,22 @@
 <div class="container-fluid desk">
     <h1>Aniversariante(s) do Mes </h1>
     <div class="row justify-content-center align-items-start">
+        @if (count($anis)>=1)
 
-        @foreach ($atletas as $atleta)
-        @if ( date('m', strtotime($atleta->data)) === date('09') )
-
+        @foreach ($anis as $ani)
         <div class="col">
             <div class="campoAniversario row justify-content-start">
-                <img class="img-responsive" src="{{asset('storage/media/imgat/'.$atleta->avatar)}}">
-                <div class="titulo col-12">{{$atleta->nome}}</div>
-                <div class="data col-12">{{date('d/m', strtotime($atleta->data))}}</div>
+                <img class="img-responsive" src="{{asset('storage/media/imgat/'.$ani->avatar)}}">
+                <div class="titulo col-12">{{$ani->nome}}</div>
+                <div class="data col-12">{{date('d/m', strtotime($ani->data))}}</div>
             </div>
         </div>
-        @endif
         @endforeach
+
+        @else
+        <b>Nenhum Aniversariante(s) Neste Mes!</b>
+        @endif
+
 
 
     </div>
@@ -55,11 +58,11 @@
                         @elseif (key($_REQUEST) === 1)
                         assistência
                         @elseif (key($_REQUEST) === 2)
-                        falhas  
+                        falhas
                         @elseif (key($_REQUEST) === 3)
-                        capa   
+                        capa
                         @else
-                        gols                            
+                        gols
                         @endif
                     </th>
                 </tr>
@@ -74,7 +77,7 @@
                         @elseif (key($_REQUEST) === 1)
                         {{$top->assis}}
                         @elseif (key($_REQUEST) === 2)
-                        {{$top->falhas}}  
+                        {{$top->falhas}}
                         @elseif (key($_REQUEST) === 3)
                         {{$top->capa}}
                         @else

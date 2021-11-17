@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Gate;
 
 class HomeController extends Controller
 {
+   public function aniversariantes($d) {
+      $lista = Atleta::where('data','like', '%'.$d.'%')->orderby('nome','ASC')->get();
+      return $lista;
+  }
 
    public function lista()
    {
@@ -20,7 +24,8 @@ class HomeController extends Controller
 
    public function index(Request $request)
    {
-
+      
+      
       switch (!empty(key($_REQUEST))) {
          case 0:
             $topGols = Atleta::orderBy('gols', 'DESC')->get();
@@ -35,10 +40,11 @@ class HomeController extends Controller
             $topGols = Atleta::orderBy('capa', 'DESC')->get();
             break;
       }
-
+      
       $dados = Atleta::all();
       return view('home', [
          'atletas' => $dados,
+         'anis' => $this->aniversariantes(date('m')),
          'tops' => $topGols
       ]);
    }
