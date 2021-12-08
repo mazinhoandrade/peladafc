@@ -4,13 +4,18 @@
 
 @section('content')
 
-    
+    <style>
+        .bl {
+            display: none;
+        }
+    </style>
+
 @if(session('warning'))
     <x-alert>
         {{session('warning')}}
     </x-alert>
 @endif
-    
+
 
 <div class="campo">
     <form method="POST">

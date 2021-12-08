@@ -1,10 +1,10 @@
-@extends('template.admin')
+@extends('template.site')
 
 @section('titulo' , 'Area de Login')
 
 @section('content')
 
-    
+
     @if($errors->any())
         <x-alert>
             <ul>
@@ -14,7 +14,7 @@
             </ul>
         </x-alert>
     @endif
-        
+
 
 <div class="campo">
     <form method="POST">

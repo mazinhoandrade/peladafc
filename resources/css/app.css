@@ -1,0 +1,182 @@
+/* style do sistema */
+/* topo do site */
+* {
+    font-family: 'Exo 2', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    text-transform:capitalize;
+}
+a:link
+{
+    text-decoration:none;
+}
+.desk {
+    max-width: 70%;
+}
+
+/* cabeĆ§alho */
+.top {
+    background-color: #3c1a4c;
+    box-shadow: 0px 1px 5px #000;
+    position: static;
+    top: 0;
+    z-index: 500;
+    margin-bottom: 20px;
+}
+.logo h1  {
+    color: white;
+    font-size: 80px;
+}
+
+/* menu */
+.corcinza {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: auto;
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.menu {
+    max-width: 20%;
+}
+.menu img {
+    max-width: 100%;
+    height: auto;
+}
+.menu h1 {
+    text-align: center;
+    color: black;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul li {
+    float: left;
+    background-color: #3c1a4c;
+    border-radius: 5px;
+    color: white;
+    padding: 3px;
+    margin: 5px;
+}
+.nav ul li:hover {
+    background-color: #000;
+}
+
+/* form */
+.campo {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.campo label {
+    width: 100%;
+    min-width: 350px;
+}
+.campo input {
+    width: 100%;
+    text-transform: lowercase;
+    display: flex;
+    min-width: 350px;
+    font-size: 20px;
+    padding: 4px;
+    border-radius: 4px;
+    border-color: none;
+    margin-bottom: 10px;
+    height: 45px;
+}
+#btn {
+    background-color:#3c1a4c;
+    padding: 5px;
+    border-radius: 5px;
+    border:none;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    color: white;
+}
+
+/* info */
+.info {
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+.info h2 {
+    font-size: 18px;
+}
+
+.info h3 {
+    text-align: right;
+    font-size: 18px;
+}
+
+.info h3 a {
+    background-color: #3c1a4c;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+}
+.info h3 a:hover {
+    background-color:black;
+}
+
+/* form de atleta */
+#atleta label {
+    width: 100%;
+    color: #000;
+    font-size: 20px;
+}
+#atleta input {
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    height: 35px;
+}
+#atleta select {
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    height: 35px;
+}
+
+.messagem {
+    background-color: #3c1a4c;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* rodapĆ© */
+footer {
+    padding-bottom: 10px;
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+    background-color: #3c1a4c;
+    position: relative;
+    bottom: 0;
+    z-index: 500;
+}
+
+/* css - resoluĆ§Ć£o pra celular */
+
+@media screen and (max-width: 500px) {
+
+    .desk {
+        max-width: 95%;
+    }
+
+}

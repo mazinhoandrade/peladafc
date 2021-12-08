@@ -20,12 +20,18 @@
 
     <div class="container-fluid corcinza">
         <form action="{{ route('baba.storeli') }}" method="POST">
-            @csrf
-            @foreach ($atletas as $atleta)
+            <div class="row justify-content-between">
 
-            <input type="checkbox" name="{{$atleta->id}}" value="{{$atleta->nome}}" /> {{$atleta->nome}}<br />
-            @endforeach
+                @csrf
+                @foreach ($atletas as $atleta)
+                    <div class="col-3">
+                        <input type="checkbox" name="{{$atleta->id}}" value="{{$atleta->nome}}"/> {{$atleta->nome}}<br/>
+                    </div>
+                @endforeach
+
+            </div>
             <input id="btn" type="submit" value="add atletas na lista">
+
         </form>
     </div>
 
@@ -39,7 +45,9 @@
         <form id="atleta" action="{{ route('baba.store') }}" method="POST">
             @csrf
             <label>Data do baba:</label></br>
-            <input type="date" name="data" required></br>
+            <input type="date" name="data"></br>
+            <label>Descrição:</label></br>
+            <input type="text" name="descricao" required></br>
             @if (!empty($listas))
             <table class="table">
                 <thead>

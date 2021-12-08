@@ -1,19 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Controller;
 
-
-use Illuminate\Http\Request;
-use App\Http\Requests\UpdateAtletaRequest;
 use App\Http\Requests\StoreRequest;
+use App\Http\Requests\UpdateAtletaRequest;
 use App\Models\Atleta;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use phpDocumentor\Reflection\Types\This;
+use phpDocumentor\Reflection\Types\Null_;
+
 
 class AtletaController extends Controller
 {
-  
 
 
     /**
@@ -22,30 +20,31 @@ class AtletaController extends Controller
      * @return \Illuminate\Http\Response
      */
 
- 
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('auth');
     }
 
-    
 
 
-    public function index(Request $request, Atleta $atleta)
+    public function index(Request $request, Atleta $atletas)
     {
 
         if (!empty($s)) {
-            $atleta = Atleta::where('id', $s)->orwhere('nome','like', '%' .$s. '%')->get();
-            
+            $atleta = Atleta::where('id', $s)->orwhere('nome', 'like', '%' . $s . '%')->get();
+
             return view('admin.atletas.index', [
-            'atleta' =>$atleta
+                'atleta' => $atletas
             ]);
-            
+
         } else {
 
-            $atleta = Atleta::Paginate(10);
+            $atletas = Atleta::orderBy('nome', 'asc')->Paginate(10);
+            //dd($this->posicao(2));
+            //exit;
             return view('admin.atletas.index', [
-                'atleta' =>$atleta
+                'atletas' => $atletas,
             ]);
         }
 
@@ -64,13 +63,12 @@ class AtletaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreRequest $request, Atleta $atleta)
     {
-        if(!empty($request->avatar))
-        {
+        if (!empty($request->avatar)) {
             $request->avatar->store(Atleta::PATH_FILE, 'public');
             $request->request->add([
                 'avatar' => $request->avatar->hashName(),
@@ -85,7 +83,7 @@ class AtletaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -96,33 +94,32 @@ class AtletaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $dados = Atleta::find($id);
-        return view('admin.atletas.edit', ['atleta'=>$dados]);
+        return view('admin.atletas.edit', ['atleta' => $dados]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateAtletaRequest $request, Atleta $jogador, $id)
     {
         $jogador = Atleta::find($id);
-        if(!empty($request->avatar))
-        {
-        $request->avatar->store(Atleta::PATH_FILE, 'public');
-           
-            $imgName = strval( $jogador->avatar );
+        if (!empty($request->avatar)) {
+            $request->avatar->store(Atleta::PATH_FILE, 'public');
+
+            $imgName = strval($jogador->avatar);
             if ($imgName !== 'default.png') {
                 Storage::delete([
-                    "public/".Atleta::PATH_FILE."/".$jogador->avatar
+                    "public/" . Atleta::PATH_FILE . "/" . $jogador->avatar
                 ]);
             }
 
@@ -130,8 +127,8 @@ class AtletaController extends Controller
                 'avatar' => $request->avatar->hashName(),
             ]);
 
-        } 
-      
+        }
+
         $jogador->update($request->request->all());
         return redirect()->route('atleta.index');
     }
@@ -139,7 +136,7 @@ class AtletaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

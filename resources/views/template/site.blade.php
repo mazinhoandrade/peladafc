@@ -22,7 +22,7 @@
         </div>
     </header>
 
-    <div class="container-fluid desk">
+    <div class="container-fluid desk bl">
         <div class="row nav">
             <ul>
                 <li><a href="/">pagina inicial</a></li>

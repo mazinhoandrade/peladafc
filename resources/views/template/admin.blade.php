@@ -67,7 +67,7 @@
     <footer>
         Todos os Direitos Resevados - Amigos Da Bola - By:MazinhoAndrade
     </footer>
- 
+
 </body>
 
 </html>

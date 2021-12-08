@@ -25,8 +25,8 @@ class StoreRequest extends FormRequest
     {
         return [
             'nome' => ['required', 'string', 'max:100', ],
-            'posi' => ['required', 'string'],
-            'data' => ['required','string'],
+            'posisao' => ['required', 'string'],
+            'data_aniversario' => ['required','string'],
             'avatar' => ['mimes:jpeg,jpg,png','max:200']
         ];
     }

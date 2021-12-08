@@ -28,14 +28,15 @@
             <label>Nome Do Atleta:</label></br>
             <input type="text" name="nome"></br>
             <label>Posição do Atleta:</label></br>
-            <select  name="posi">
-                <option value="Goleiro Linha">Goleiro Linha</option>
-                <option value="Fixo" selected>Fixo</option>
-                <option value="Ala">Ala</option>
-                <option value="Pivô">Pivô</option>
+            <select  name="posisao">
+                <option value="1">Goleiro Linha</option>
+                <option value="2" selected>Fixo</option>
+                <option value="3">Ala Esquerda</option>
+                <option value="4">Ala Direita</option>
+                <option value="5">Pivô</option>
             </select>
             <label>Data de Nacimento:</label></br>
-            <input type="date" name="data"></br>
+            <input type="date" name="data_aniversario"></br>
             <label>Foto Do Atleta (jpg,png):</label></br>
             <input type="file" name="avatar">
             <hr />

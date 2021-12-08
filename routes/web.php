@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MapController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
@@ -31,10 +32,12 @@ use App\Http\Controllers\AdminController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/atleta', [HomeController::class, 'lista'])->name('atleta');
 
+Route::get('/texte', [MapController::class, 'index']);
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'indexA']);
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
+//Route::get('/register', [RegisterController::class, 'index'])->name('register');
+//Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::prefix('/admin')->middleware('auth')->group(function(){
@@ -42,8 +45,8 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
 
     Route::resource('/atleta', AtletaController::class);
     Route::resource('/baba', BabaController::class);
-    Route::post('/baba/create', [BabaController::class, 'storeli'])->name('baba.storeli'); 
-});    
+    Route::post('/baba/create', [BabaController::class, 'storeli'])->name('baba.storeli');
+});
 
 Route::fallback(function(){
     echo "erro 404";

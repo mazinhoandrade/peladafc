@@ -24,7 +24,7 @@ class StorebRequest extends FormRequest
     public function rules()
     {
         return [
-            'data' => ['required','string'],
+            //'data' => ['required','string'],
             'falhas' => ['required', 'min:0' ],
             'gols' => ['required', 'min:0' ],
             'assis' => ['required', 'min:0'],
