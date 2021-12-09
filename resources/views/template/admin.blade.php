@@ -24,7 +24,7 @@
 
     <div class="container-fluid desk">
         <div class="row justify-content-between info">
-            <div class="col-4">
+            <div class="col col-xl-4">
                 <h2>seja bem vindo: <b>{{ Auth::user()->name }}</b></h2>
             </div>
 

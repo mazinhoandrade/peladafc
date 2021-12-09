@@ -9,14 +9,14 @@
         <div class="row justify-content-center align-items-start">
 
             @foreach($atletas as $atleta)
-                <div class="col-6">
-                    <div class="areaatletas row justify-content-start">
-                        <div class="col-6">
+                <div class="col-6 col-xl-6">
+                    <div class="areaatletas col-12 col-xl-12 row justify-content-start">
+                        <div class="col-12 col-xl-6">
                             <img class="img-responsive" src="{{asset('storage/media/imgat/'.$atleta->avatar)}}">
                         </div>
-                        <div class="row col-6">
+                        <div class="row col-12 col-xl-12">
                             <div class="titulo col-12">{{$atleta->nome}}</div>
-                            <div class="infoa col-12">
+                            <div class="infoa col">
                                 <b>Posição: </b>{{App\Models\Atleta::posicao($atleta->posisao)}}<br />
                                 <b>Idade: </b>{{date('Y') - date('Y', strtotime($atleta->data_aniversario)) }} Anos<br />
                                 <b>Gols: </b>{{$atleta->t_gols}}<br />

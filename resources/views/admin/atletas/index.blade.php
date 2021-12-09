@@ -7,7 +7,7 @@
 
     <div class="container-fluid desk">
         <div class="row justify-content-between ">
-            <div class="col-4">
+            <div class="col col-xl-4">
                 <h2>Ficha dos Atletas</h2>
             </div>
 
@@ -15,7 +15,7 @@
     </div>
 
     <div class="container-fluid desk corcinza">
-    <table class="table">
+    <table class=".table">
   <thead>
     <tr>
       <th scope="col">Foto</th>

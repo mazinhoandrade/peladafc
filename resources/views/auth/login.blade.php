@@ -17,14 +17,14 @@
 @endif
 
 
-<div class="campo">
-    <form method="POST">
+<div class="campo input-group">
+    <form  method="POST">
         @csrf
         <label>Usuario:</label>
-        <input type="text"  name="name" >
+        <input class="form-control" type="text"  name="name" >
         <label>Senha:</label>
-        <input type="password" name="password">
-        <input id="btn" type="submit" value="entrar">
+        <input class="form-control" type="password" name="password">
+        <input class="form-control" id="btn" type="submit" value="entrar">
     </form>
 </div>
 

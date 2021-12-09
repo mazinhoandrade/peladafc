@@ -18,6 +18,7 @@ class BabaController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
     public function index()
     {
         $jogos = Baba::orderBy('created_at', 'desc')->Paginate(10);
@@ -58,13 +59,12 @@ class BabaController extends Controller
      */
     public function store(StorebRequest $request, Atleta $atleta)
     {
-        $date = date("Y-m-d H:i:s");
-
+        date_default_timezone_set('America/Sao_Paulo');
         $dados = $request->except(['_token']);
         if (!empty($dados["data"])) {
             $dataAtual = $dados["data"];
         } else {
-            $dataAtual = $date;
+            $dataAtual = date("Y-m-d H:i:s");
         }
         $ids = $dados["id"];
         $falhas = $dados["falhas"];
@@ -134,13 +134,12 @@ class BabaController extends Controller
      */
     public function update(StorebRequest $request, $id)
     {
-
-        $date = date("Y-m-d H:i:s");
+        date_default_timezone_set('America/Sao_Paulo');
         $dados = $request->except(['_token']);
         if (!empty($dados["data"])) {
             $dataAtual = $dados["data"];
         } else {
-            $dataAtual = $date;
+            $dataAtual = date("Y-m-d H:i:s");
         }
         $ids = $dados["id"];
         $falhas = $dados["falhas"];

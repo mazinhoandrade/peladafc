@@ -7,21 +7,17 @@
     <div class="container-fluid desk">
         <h1>Aniversariante(s) do Mes </h1>
         <div class="row justify-content-center align-items-start">
-            @if (count($anis)>=1)
-
-                @foreach ($anis as $ani)
-                    <div class="col">
+                @forelse ($anis as $ani)
+                    <div class="col-6 col-xl-4">
                         <div class="campoAniversario row justify-content-start">
                             <img class="img-responsive" src="{{asset('storage/media/imgat/'.$ani->avatar)}}">
                             <div class="titulo col-12">{{$ani->nome}}</div>
                             <div class="data col-12">{{date('d/m', strtotime($ani->data_aniversario))}}</div>
                         </div>
                     </div>
-                @endforeach
-
-            @else
+            @empty
                 <b>Nenhum Aniversariante(s) Neste Mes!</b>
-            @endif
+            @endforelse
 
         </div>
     </div>
@@ -32,7 +28,7 @@
             @if (!empty($tops_semana))
 
                 @for ($i=0; $i<count($tops_semana); $i++)
-                    <div class="col">
+                    <div class="col-6 col-xl-4">
                         <div class="campoAniversario row justify-content-start">
                             <img class="img-responsive"
                                  src="{{asset("storage/media/imgat/".$tops_semana[$i]['avatar'])}}">
@@ -51,7 +47,7 @@
 
     <div class="container-fluid desk">
         <div class="row align-items-center">
-            <div class="col-4">
+            <div class="col col-xl-4">
                 <h1>Ranking Geral</h1>
             </div>
 
