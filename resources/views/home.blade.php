@@ -22,6 +22,7 @@
         </div>
     </div>
 
+
     <div class="container-fluid desk">
         <h1>Os Melhores da Semana </h1>
         <div class="row justify-content-center align-items-start">
@@ -53,8 +54,7 @@
 
             <div class="col btn">
                 <select name="ranking" id="ranking">
-                    <option value="">Escolha</option>
-                    <option value="0">Gols</option>
+                    <option value="0" selected>Gols</option>
                     <option value="1">assistência</option>
                     <option value="2">Falhas</option>
                     <option value="3">Capas</option>

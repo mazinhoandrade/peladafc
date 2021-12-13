@@ -49,7 +49,7 @@
             <label>Descrição:</label></br>
             <input class="mb-2" type="text" name="descricao" required></br>
             @if (!empty($listas))
-            <table class=".table-striped">
+            <table class="table-striped">
                 <thead class="mb-1">
                     <tr>
                         <th scope="col "></th>
@@ -71,7 +71,13 @@
                         <td><input class="" type="number" min="0" name="falhas[]" value="0" required></td>
                         <td><input class="" type="number" min="0" name="gols[]"   value="0" required></td>
                         <td><input class="" type="number" min="0" name="assis[]" id="nun"  value="0" required></td>
-                        <td><input class="" type="number" min="0" name="capa[]" id="nun"  value="0" required></td>
+                        <td>
+                            <select name="capa[]">
+                                    <option value="0" selected>Não</option>
+                                    <option value="1">Sim</option>
+                            </select>
+{{--                            <input class="" type="number" min="0" name="capa[]" id="nun"  value="0" required>--}}
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -44,12 +44,10 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-
         $tops_semana = Baba::with('filtroMelhores')
             ->where('created_at', '>', date("Y-m-d H:i:s", strtotime('-4 days')))
             ->limit(5)
             ->first();
-
 
         if (key($_REQUEST) === 1) {
             $dados = Atleta::withSum('atletasBabas as t_assistecias', 'assistecias')
@@ -69,11 +67,10 @@ class HomeController extends Controller
                 ->get();
         }
 
-
         return view('home', [
             'anis' => $this->aniversariantes(date('m')),
             'tops' => $dados,
-            'tops_semana' => $tops_semana["filtroMelhores"]
+            'tops_semana' => $tops_semana !== null ? $tops_semana["filtroMelhores"] : null
         ]);
     }
 }

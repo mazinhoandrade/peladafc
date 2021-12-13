@@ -60,7 +60,18 @@
                                 <td><input type="number" min="0" name="falhas[]" value="{{ $dados[$i]["pivot"]["falhas"]}}" required></td>
                                 <td><input type="number" min="0" name="gols[]" value="{{ $dados[$i]["pivot"]["gols"]}}" required></td>
                                 <td><input type="number" min="0" name="assis[]" id="nun" value="{{ $dados[$i]["pivot"]["assistecias"]}}" required></td>
-                                <td><input type="number" min="0" name="capa[]" id="nun" value="{{ $dados[$i]["pivot"]["is_veceu_baba"]}}" required></td>
+                                <td>
+                                    <select name="capa[]">
+                                        @if ($dados[$i]["pivot"]["is_veceu_baba"] === 0)
+                                            <option value="0" selected>Não</option>
+                                            <option value="1">Sim</option>
+                                        @else
+                                            <option value="1" selected>Sim</option>
+                                            <option value="0">Não</option>
+                                        @endif
+                                    </select>
+{{--                                    value="{{ $dados[$i]["pivot"]["is_veceu_baba"]}}" required>--}}
+                                </td>
                             </tr>
                         @endfor
                         </tbody>

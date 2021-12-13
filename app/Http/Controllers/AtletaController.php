@@ -115,7 +115,6 @@ class AtletaController extends Controller
         $jogador = Atleta::find($id);
         if (!empty($request->avatar)) {
             $request->avatar->store(Atleta::PATH_FILE, 'public');
-
             $imgName = strval($jogador->avatar);
             if ($imgName !== 'default.png') {
                 Storage::delete([
